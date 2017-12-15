@@ -6,10 +6,8 @@ RUN \
   mkdir /data && \
   cd /data && \
   git clone https://github.com/projectcalico/canal && \
-  rm -rf .git && \
-  rm -rf .github && \
   mv canal/* . && \
-  rmdir canal
+  rm -rf canal
 
 FROM nginx:alpine
 COPY --from=0 /data /data
